@@ -87,7 +87,13 @@
                                           <a href="index.php?ruta=editar-grupo&id=<?php echo $grupo['id'];?>&nombre=<?php echo $grupo['nombre']; ?>"> <button type="button" class="btn btn-warning waves-effect waves-light">Editar</button></a>
                                           <!--<a href="#"> <button type="button" class="btn btn-danger waves-effect waves-light btnEliminarGrupo" idGrupo="<?php //echo $id; ?>">Borrar</button></a>-->
                                           <button type="button" name="view" value="Ver" id="<?php echo $grupo["id"]; ?>" class="btn btn-info btn-xs view_data"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                                          <a href="bat"> <button type="button" name="button" class="btn btn-success" onclick="return confirm('¿Confirma envio de mails?');">Enviar</button> </a>
+                                          <a href="bat"> <button type="button" name="button" <?php if ($grupo['activo']==0) {
+                                            echo "class='btn btn-warning'";
+                                          }else {
+                                            echo "class='btn btn-success'";
+                                          } ?>  onclick="return confirm('¿Confirma envio de mails?');" <?php if ($grupo['activo']==0) {
+                                            echo "disabled";
+                                          } ?>>Enviar</button> </a>
                                         </td>
                                       </tr>
                                   <?php } ?>
