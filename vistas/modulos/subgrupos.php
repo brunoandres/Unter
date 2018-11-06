@@ -89,13 +89,13 @@
                                           <a href="index.php?ruta=editar-subgrupo&id=<?php echo $subgrupo['id'];?>&nombre=<?php echo $subgrupo['nombre']; ?>"> <button type="button" class="btn btn-warning waves-effect waves-light">Editar</button></a>
                                           <!--<a href="#"> <button type="button" class="btn btn-danger waves-effect waves-light btnEliminarSubgrupo" idSubgrupo="<?php //echo $id; ?>">Borrar</button></a>-->
                                           <button type="button" name="view" value="Ver" id="<?php echo $subgrupo["id"]; ?>" class="btn btn-info btn-xs view_data2"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                                          <a href="bat"> <button type="button" name="button" <?php if ($subgrupo['activo']==0) {
-                                            echo "class='btn btn-warning'";
-                                          }else {
-                                            echo "class='btn btn-success'";
-                                          } ?> class="btn btn-success" onclick="return confirm('¿Confirma envio de mails?');" <?php if ($subgrupo['activo']==0) {
-                                            echo "disabled";
-                                          } ?>>Enviar</button> </a>
+                                          <?php if ($subgrupo['activo']==1 and $subgrupo['enviado']==0): ?>
+                                          <a href="bat"> <button type="button" name="button" class="btn btn-success" onclick="return confirm('¿Confirma envio de mails?');">Enviar</button> </a>
+                                          <?php endif; ?>
+                                          <?php if ($subgrupo['enviado']==1): ?>
+                                          <a href="#"> <button type="button" class="btn btn-danger" name="desbloquear">Desbloquear</button> </a>
+                                          <?php endif; ?>
+
                                         </td>
                                       </tr>
                                   <?php } ?>

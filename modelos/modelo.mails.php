@@ -86,7 +86,7 @@ class ModeloMails
   static public function mdlObtenerMailsCant(){
 
     $link = Conexion::ConectarMysql();
-    $sql = mysqli_query($link,"select * from mails");
+    $sql = mysqli_query($link,"select * from mails where activo=1");
     $total = mysqli_num_rows($sql);
 
     return $total;
