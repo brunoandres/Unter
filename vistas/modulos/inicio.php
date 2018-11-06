@@ -37,7 +37,7 @@
                                           <div class="col-8">
                                               <h4 class="text-c-purple"><?php $total = new ControladorMails();
                                               echo $t = $total -> ctrMostrarMailsCant(); ?></h4>
-                                              <h6 class="text-muted m-b-0">Mails</h6>
+                                              <h6 class="text-muted m-b-0">Mails activos</h6>
                                           </div>
                                           <div class="col-4 text-right">
                                               <i class="fa fa-bar-chart f-28"></i>
@@ -66,7 +66,7 @@
                                           <div class="col-8">
                                               <h4 class="text-c-green"><?php $total = new ControladorGrupos();
                                               echo $t = $total -> ctrMostrarGruposCant(); ?></h4>
-                                              <h6 class="text-muted m-b-0">Grupos</h6>
+                                              <h6 class="text-muted m-b-0">Grupos activos</h6>
                                           </div>
                                           <div class="col-4 text-right">
                                               <i class="fa fa-file-text-o f-28"></i>
@@ -97,7 +97,7 @@
                                           <div class="col-8">
                                               <h4 class="text-c-red"><?php $total = new ControladorSubgrupos();
                                               echo $t = $total -> ctrMostrarSubGruposCant(); ?></h4>
-                                              <h6 class="text-muted m-b-0">Subgrupos</h6>
+                                              <h6 class="text-muted m-b-0">Subgrupos activos</h6>
                                           </div>
                                           <div class="col-4 text-right">
                                               <i class="fa fa-file-text-o f-28"></i>

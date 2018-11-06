@@ -72,7 +72,7 @@ class ModeloMails
   static public function ctrMostrarMailsUltimos(){
 
     $link = Conexion::ConectarMysql();
-    $sql = mysqli_query($link,"SELECT a.*,b.nombre as subgrupo from mails a,subgrupos b, mails_subgrupos c where a.id=c.id_mail and b.id=c.id_subgrupo order by id desc LIMIT 10");
+    $sql = mysqli_query($link,"SELECT * FROM `mails` ORDER BY id DESC LIMIT 5");
 
     while ($filas = mysqli_fetch_assoc($sql)) {
       $mails[]=$filas;
