@@ -108,6 +108,53 @@ class ControladorGrupos
       //function
     }
 
+    //FUNCION PARA SETEAR EL ENVIO CON VALOR 1
+    public function ctrSetearEnvio($id){
+
+      $query = ModeloGrupos::mdlSetearEnvio($id);
+
+    }
+
+    //FUNCION PARA SETEAR EL ENVIO CON VALOR 0
+    public function ctrActivarEnvio($id){
+
+      $query = ModeloGrupos::mdlActivarEnvio($id);
+
+      if ($query==true) {
+
+        echo'<script>
+
+     swal({
+         type: "success",
+         title: "Envio activado correctamente!",
+         showConfirmButton: true,
+         confirmButtonText: "Cerrar"
+         }).then(function(result){
+             if (result.value) {
+
+             window.location = "grupos";
+
+             }
+           })
+
+     </script>';
+
+    }else {
+
+      echo'<script>
+
+     swal({
+         type: "error",
+         title: "¡Error al activar Envio!",
+         showConfirmButton: true,
+         confirmButtonText: "Cerrar"
+         }).then(function(result){
+
+       })
+
+     </script>';
+    }
+  }
     //FUNCION PARA EDITAR GRUPO
     public function ctrEditarGrupo(){
 

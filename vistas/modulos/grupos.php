@@ -94,7 +94,7 @@
                                           <?php endif; ?>
                                           <?php if ($grupo['enviado']==1): ?>
                                           <button type="button" name="button" class="btn btn-success">Enviado</i></button>
-                                          <a href="#"> <button type="button" class="btn btn-danger" name="desbloquear">Activar envío</button> </a>
+                                          <a href="index.php?ruta=grupos&id=<?php echo $grupo['id']; ?>&valor=0"> <button type="button" class="btn btn-danger" name="desbloquear">Activar envío</button> </a>
                                           <?php endif; ?>
 
                                         </td>
@@ -132,6 +132,23 @@
 
   $borrarGrupo = new ControladorGrupos();
   $borrarGrupo -> ctrBorrarGrupo();
+
+?>
+
+<?php
+
+  if (isset($_GET['id']) and isset($_GET['valor'])) {
+
+    if ($_GET['valor']==0) {
+
+      $id=$_GET['id'];
+      $activar = new ControladorGrupos();
+      $activar -> ctrActivarEnvio($id);
+
+    }
+
+  }
+
 
 ?>
 

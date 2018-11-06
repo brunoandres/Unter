@@ -91,6 +91,41 @@ class ModeloGrupos
 
  }
 
+ static public function mdlSetearEnvio($idGrupo){
+
+   $link = Conexion::ConectarMysql();
+   $query = "UPDATE `grupos` SET `enviado`= 1 WHERE id = $idGrupo";
+   $sql = mysqli_query($link,$query);
+
+   if ($sql) {
+     return true;
+   }else {
+     return false;
+   }
+   // Cerrar la conexión.
+   mysqli_close( $link );
+
+
+ }
+
+ static public function mdlActivarEnvio($idGrupo){
+
+   $link = Conexion::ConectarMysql();
+   $query = "UPDATE `grupos` SET `enviado`= 0 WHERE id = $idGrupo";
+   $sql = mysqli_query($link,$query);
+
+   if ($sql) {
+     return true;
+   }else {
+     return false;
+   }
+   // Cerrar la conexión.
+   mysqli_close( $link );
+
+
+ }
+
+
 }
 
 ?>
