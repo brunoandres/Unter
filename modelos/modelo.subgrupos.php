@@ -41,7 +41,8 @@ class ModeloSubGrupos
   static public function mdlObtenerSubGrupos(){
 
     $link = Conexion::ConectarMysql();
-    $sql = mysqli_query($link,"select a.*,b.nombre as grupo from subgrupos a,grupos b where b.id=a.fk_id_grupo");
+    $query = "select COUNT(*) as cant_mails,a.id,a.nombre,a.descripcion,c.nombre as grupo,a.activo,a.enviado,a.adjunto,a.individual from subgrupos a, mails_subgrupos b, grupos c where a.id=b.id_subgrupo and a.fk_id_grupo=c.id GROUP by a.nombre";
+    $sql = mysqli_query($link,$query);
 
     while ($filas = mysqli_fetch_assoc($sql)) {
       $subgrupos[]=$filas;

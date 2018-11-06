@@ -50,9 +50,10 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>Descripción</th>
-                                        <th>Estado</th>
-                                        <th>Adjunto</th>
+                                        <th style="text-align:center;">Mails</th>
+                                        <th style="text-align:center;">Descripción</th>
+                                        <th style="text-align:center;">Estado</th>
+                                        <th style="text-align:center;">Adjunto</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -70,13 +71,14 @@
                                       ?>
                                       <tr>
                                         <td><?php echo $grupo['nombre']; ?></td>
-                                        <td><?php echo $grupo['descripcion']; ?></td>
-                                        <td><?php if ($grupo['activo']==1) {
+                                        <td style="text-align:center;"><h5><?php echo $grupo['cant_mails']; ?></h5></td>
+                                        <td style="text-align:center;"><?php echo $grupo['descripcion']; ?></td>
+                                        <td style="text-align:center;"><?php if ($grupo['activo']==1) {
                                           echo "<span class='label label-success'>ACTIVO</span>";
                                         } else {
                                           echo "<span class='label label-danger'>INACTIVO</span>";
                                         }?></td>
-                                        <td><?php if ($grupo['adjunto']==1) {
+                                        <td style="text-align:center;"><?php if ($grupo['adjunto']==1) {
                                           echo "<span class='label label-success'>SI</span>";
                                         } else {
                                           echo "<span class='label label-danger'>NO</span>";
@@ -101,9 +103,10 @@
                                 <tfoot>
                                     <tr>
                                       <th>Nombre</th>
-                                      <th>Descripción</th>
-                                      <th>Estado</th>
-                                      <th>Adjunto</th>
+                                      <th style="text-align:center;">Mails</th>
+                                      <th style="text-align:center;">Descripción</th>
+                                      <th style="text-align:center;">Estado</th>
+                                      <th style="text-align:center;">Adjunto</th>
                                       <th>Acciones</th>
                                     </tr>
                                 </tfoot>

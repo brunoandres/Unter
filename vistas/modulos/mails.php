@@ -50,11 +50,11 @@
                               <table id="example" class="display tablas" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Dirección</th>
-                                        <th>Dominio</th>
-                                        <th>Estado</th>
-                                        <th>Subgrupos</th>
+                                        <th style="text-align:center;">Nombre</th>
+                                        <th style="text-align:center;">Dirección</th>
+                                        <th style="text-align:center;">Dominio</th>
+                                        <th style="text-align:center;">Estado</th>
+                                        <th style="text-align:center;">Subgrupos</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -73,8 +73,8 @@
                                       <tr>
                                         <td><?php echo $mail['nombre']; ?></td>
                                         <td><?php echo $mail['direccion']; ?></td>
-                                        <td><?php echo $mail['dominio']; ?></td>
-                                        <td><?php if ($mail['activo']==1) {
+                                        <td style="text-align:center;"><?php echo $mail['dominio']; ?></td>
+                                        <td style="text-align:center;"><?php if ($mail['activo']==1) {
                                           echo "<span class='label label-success'>ACTIVO</span>";
                                         } else {
                                           echo "<span class='label label-danger'>INACTIVO</span>";
@@ -90,11 +90,11 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                      <th>Nombre</th>
-                                      <th>Dirección</th>
-                                      <th>Dominio</th>
-                                      <th>Estado</th>
-                                      <th>Subgrupos</th>
+                                      <th style="text-align:center;">Nombre</th>
+                                      <th style="text-align:center;">Dirección</th>
+                                      <th style="text-align:center;">Dominio</th>
+                                      <th style="text-align:center;">Estado</th>
+                                      <th style="text-align:center;">Subgrupos</th>
                                       <th>Acciones</th>
                                     </tr>
                                 </tfoot>

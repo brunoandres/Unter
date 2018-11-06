@@ -50,10 +50,11 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
-                                        <th>Descripción</th>
-                                        <th>Grupo</th>
-                                        <th>Estado</th>
-                                        <th>Adjunto</th>
+                                        <th style="text-align:center;">Mails</th>
+                                        <th style="text-align:center;">Descripción</th>
+                                        <th style="text-align:center;">Grupo</th>
+                                        <th style="text-align:center;">Estado</th>
+                                        <th style="text-align:center;">Adjunto</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -71,14 +72,15 @@
                                       ?>
                                       <tr>
                                         <td><?php echo $subgrupo['nombre']; ?></td>
-                                        <td><?php echo $subgrupo['descripcion']; ?></td>
-                                        <td><?php echo $subgrupo['grupo']; ?></td>
-                                        <td><?php if ($subgrupo['activo']==1) {
+                                        <td style="text-align:center;"> <h5> <?php echo $subgrupo['cant_mails']; ?></h5></td>
+                                        <td style="text-align:center;"><?php echo $subgrupo['descripcion']; ?></td>
+                                        <td style="text-align:center;"><?php echo $subgrupo['grupo']; ?></td>
+                                        <td style="text-align:center;"><?php if ($subgrupo['activo']==1) {
                                           echo "<span class='label label-success'>ACTIVO</span>";
                                         } else {
                                           echo "<span class='label label-danger'>INACTIVO</span>";
                                         }?></td>
-                                        <td><?php if ($subgrupo['adjunto']==1) {
+                                        <td style="text-align:center;"><?php if ($subgrupo['adjunto']==1) {
                                           echo "<span class='label label-success'>SI</span>";
                                         } else {
                                           echo "<span class='label label-danger'>NO</span>";
@@ -103,10 +105,11 @@
                                 <tfoot>
                                     <tr>
                                       <th>Nombre</th>
-                                      <th>Descripción</th>
-                                      <th>Grupo</th>
-                                      <th>Estado</th>
-                                      <th>Adjunto</th>
+                                      <th style="text-align:center;">Mails</th>
+                                      <th style="text-align:center;">Descripción</th>
+                                      <th style="text-align:center;">Grupo</th>
+                                      <th style="text-align:center;">Estado</th>
+                                      <th style="text-align:center;">Adjunto</th>
                                       <th>Acciones</th>
                                     </tr>
                                 </tfoot>
