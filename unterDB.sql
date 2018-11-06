@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2018 a las 21:09:16
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.1
+-- Tiempo de generación: 06-11-2018 a las 18:41:16
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,8 +36,14 @@ CREATE TABLE `grupos` (
   `asunto` text COLLATE utf8_spanish2_ci NOT NULL,
   `cuerpo` text COLLATE utf8_spanish2_ci NOT NULL,
   `adjunto` tinyint(1) NOT NULL,
+  `dropbox` text COLLATE utf8_spanish2_ci NOT NULL,
+  `enviado` tinyint(1) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `grupos`
+--
 
 -- --------------------------------------------------------
 
@@ -54,7 +60,11 @@ CREATE TABLE `mails` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- --------------------------------------------------------
+--
+-- Volcado de datos para la tabla `mails`
+--
+
+-- ------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `mails_subgrupos`
@@ -65,7 +75,12 @@ CREATE TABLE `mails_subgrupos` (
   `id_subgrupo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- --------------------------------------------------------
+--
+-- Volcado de datos para la tabla `mails_subgrupos`
+--
+
+
+----------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `subgrupos`
@@ -81,8 +96,14 @@ CREATE TABLE `subgrupos` (
   `asunto` text COLLATE utf8_spanish2_ci NOT NULL,
   `cuerpo` text COLLATE utf8_spanish2_ci NOT NULL,
   `adjunto` text COLLATE utf8_spanish2_ci NOT NULL,
+  `dropbox` text COLLATE utf8_spanish2_ci NOT NULL,
+  `enviado` tinyint(1) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `subgrupos`
+--
 
 --
 -- Índices para tablas volcadas
@@ -124,19 +145,19 @@ ALTER TABLE `subgrupos`
 -- AUTO_INCREMENT de la tabla `grupos`
 --
 ALTER TABLE `grupos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `mails`
 --
 ALTER TABLE `mails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `subgrupos`
 --
 ALTER TABLE `subgrupos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -146,7 +167,7 @@ ALTER TABLE `subgrupos`
 -- Filtros para la tabla `mails_subgrupos`
 --
 ALTER TABLE `mails_subgrupos`
-  ADD CONSTRAINT `mails_subgrupos_ibfk_1` FOREIGN KEY (`id_subgrupo`) REFERENCES `subgrupos` (`id`),
+  ADD CONSTRAINT `mails_subgrupos_ibfk_1` FOREIGN KEY (`id_subgrupo`) REFERENCES `subgrupos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `mails_subgrupos_ibfk_2` FOREIGN KEY (`id_mail`) REFERENCES `mails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
