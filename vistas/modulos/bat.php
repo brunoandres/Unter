@@ -12,7 +12,7 @@ $id = $_GET['id'];
 $path = $_GET['path'];
 
 //DIRECTORIO DEL SISTEMA.
-$directorio = 'proyecto_unter';
+$directorio = 'unter';
 
 //FUNCION PARA EJECUTAR SCRIPT .BAT, LUEGO DE START ELEGIR DIRECTORIO DEL ARCHIVO.
 send('start C:/xampp/htdocs/'.$directorio.'./bat_envios/'.$path.'.bat');
