@@ -54,7 +54,7 @@
                                         <th>Dirección</th>
                                         <th>Dominio</th>
                                         <th>Estado</th>
-                                        <th>Subgrupo</th>
+                                        <th>Subgrupos</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -79,7 +79,7 @@
                                         } else {
                                           echo "<span class='label label-danger'>INACTIVO</span>";
                                         }?></td>
-                                        <td><?php echo $mail['subgrupo']; ?></td>
+                                        <td><?php echo $mail['subgrupos']; ?></td>
                                         <td>
 
                                           <a href='index.php?ruta=editar-mail&id=<?php echo "$id"; ?>&nombre=<?php echo $mail['nombre']; ?>&descripcion=<?php echo $mail['direccion']; ?>'> <button type="submit" name="btnFormNuevoGrupo" class="btn btn-warning waves-effect waves-light">Editar</button></a>
@@ -94,7 +94,7 @@
                                       <th>Dirección</th>
                                       <th>Dominio</th>
                                       <th>Estado</th>
-                                      <th>Subgrupo</th>
+                                      <th>Subgrupos</th>
                                       <th>Acciones</th>
                                     </tr>
                                 </tfoot>

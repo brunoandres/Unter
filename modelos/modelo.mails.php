@@ -54,7 +54,10 @@ class ModeloMails
   static public function mdlObtenerMails(){
 
     $link = Conexion::ConectarMysql();
-    $sql = mysqli_query($link,"SELECT a.*,b.nombre as subgrupo from mails a,subgrupos b, mails_subgrupos c where a.id=c.id_mail and b.id=c.id_subgrupo");
+    //$query="SELECT a.*,b.nombre as subgrupo from mails a,subgrupos b, mails_subgrupos c where a.id=c.id_mail and b.id=c.id_subgrupo";
+    $query = "SELECT a.id,a.nombre,a.direccion,a.dominio,a.activo,GROUP_CONCAT(b.nombre) as subgrupos FROM mails a, subgrupos b, mails_subgrupos c WHERE a.id=c.id_mail AND b.id=c.id_subgrupo GROUP BY a.direccion";
+    $sql = mysqli_query($link,$query);
+
 
     while ($filas = mysqli_fetch_assoc($sql)) {
       $mails[]=$filas;
