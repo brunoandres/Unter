@@ -45,6 +45,9 @@ CREATE TABLE `grupos` (
 -- Volcado de datos para la tabla `grupos`
 --
 
+INSERT INTO `grupos` (`id`, `nombre`, `descripcion`, `activo`, `asunto`, `cuerpo`, `adjunto`, `dropbox`, `enviado`, `date`) VALUES
+(4, 'Abogados', 'Abogados', 1, 'Mail masivo abogados InformaciÃ³n actual', '<h2><u>Mail masivo abogados InformaciÃ³n actual</u></h2>', 0, '', 0, '2018-11-06 15:20:43');
+
 -- --------------------------------------------------------
 
 --
@@ -64,7 +67,14 @@ CREATE TABLE `mails` (
 -- Volcado de datos para la tabla `mails`
 --
 
--- ------------------------------------------------------
+INSERT INTO `mails` (`id`, `nombre`, `direccion`, `dominio`, `activo`, `date`) VALUES
+(1, 'bruno', 'brunoandres2013@gmail.com', 'GMAIL', 1, '2018-11-05 17:24:15'),
+(2, 'bruno', 'andres.942013@hotmail.com', 'HOTMAIL', 1, '2018-11-05 17:24:32'),
+(3, 'prueba', 'prueba@gmail.com', 'GMAIL', 0, '2018-11-06 14:05:02'),
+(4, 'Prueba ', 'prueba2@gmail.com', 'GMAIL', 1, '2018-11-06 14:11:30'),
+(5, 'Nuevo', 'nuevo@hotmail.com', 'HOTMAIL', 1, '2018-11-06 14:12:41');
+
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `mails_subgrupos`
@@ -79,8 +89,17 @@ CREATE TABLE `mails_subgrupos` (
 -- Volcado de datos para la tabla `mails_subgrupos`
 --
 
+INSERT INTO `mails_subgrupos` (`id_mail`, `id_subgrupo`) VALUES
+(1, 3),
+(2, 3),
+(3, 3),
+(3, 4),
+(4, 3),
+(5, 3),
+(5, 4),
+(5, 5);
 
-----------------------------------------------------------
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `subgrupos`
@@ -104,6 +123,11 @@ CREATE TABLE `subgrupos` (
 --
 -- Volcado de datos para la tabla `subgrupos`
 --
+
+INSERT INTO `subgrupos` (`id`, `fk_id_grupo`, `nombre`, `descripcion`, `activo`, `individual`, `asunto`, `cuerpo`, `adjunto`, `dropbox`, `enviado`, `date`) VALUES
+(3, 4, 'Grupo2', 'para pruebas', 1, 1, 'InformaciÃ³n de subgrupo actual', '<p>InformaciÃ³n de subgrupo actual<br></p>', '0', '', 1, '2018-11-06 15:18:59'),
+(4, 4, 'Grupo1', 'sdfsdf', 1, 1, 'sdfsdf', '<ol><li>sdfsdf</li><li style=\"box-sizing: inherit; margin-top: 0px; margin-bottom: 0.5rem; font-family: Roboto, sans-serif; font-weight: 500; line-height: 1.1; color: rgb(0, 0, 0); font-size: 1.75rem; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;\">sdfsdf</li></ol><h3><br></h3>', '0', '', 0, '2018-11-06 17:20:36'),
+(5, 4, 'subgrupo3', 'subgrupo3', 1, 1, 'subgrupo3', '<p><b>subgrupo3</b><br></p>', '0', '', 1, '2018-11-06 15:19:17');
 
 --
 -- Índices para tablas volcadas
