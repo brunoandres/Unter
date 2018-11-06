@@ -90,7 +90,7 @@
                                           <!--<a href="#"> <button type="button" class="btn btn-danger waves-effect waves-light btnEliminarGrupo" idGrupo="<?php //echo $id; ?>">Borrar</button></a>-->
                                           <button type="button" name="view" value="Ver" id="<?php echo $grupo["id"]; ?>" class="btn btn-info btn-xs view_data"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                           <?php if ($grupo['activo']==1 and $grupo['enviado']==0): ?>
-                                          <a href="bat"> <button type="button" name="button" class="btn btn-success" onclick="return confirm('¿Confirma envio de mails?');">Enviar</button> </a>
+                                          <a href="index.php?ruta=bat&id=<?php echo $grupo['id']; ?>&path=<?php echo $grupo['path_bat']; ?>"> <button type="button" name="button" class="btn btn-danger" onclick="return confirm('¿Confirma envio de mails?');">Enviar</button> </a>
                                           <?php endif; ?>
                                           <?php if ($grupo['enviado']==1): ?>
                                           <button type="button" name="button" class="btn btn-success">Enviado</i></button>

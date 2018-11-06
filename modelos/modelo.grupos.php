@@ -23,7 +23,7 @@ class ModeloGrupos
   static public function mdlObtenerGrupos(){
 
     $link = Conexion::ConectarMysql();
-    $sql = mysqli_query($link,"SELECT COUNT(*) as cant_mails,a.id,a.nombre,a.descripcion,a.activo,a.adjunto,a.enviado FROM grupos a, mails_subgrupos b,mails c WHERE c.id=b.id_mail GROUP by a.nombre");
+    $sql = mysqli_query($link,"SELECT COUNT(*) as cant_mails,a.id,a.nombre,a.descripcion,a.activo,a.adjunto,a.enviado,a.path_bat FROM grupos a, mails_subgrupos b,mails c WHERE c.id=b.id_mail GROUP by a.nombre");
 
     while ($filas = mysqli_fetch_assoc($sql)) {
       $grupos[]=$filas;

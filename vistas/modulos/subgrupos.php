@@ -92,7 +92,7 @@
                                           <!--<a href="#"> <button type="button" class="btn btn-danger waves-effect waves-light btnEliminarSubgrupo" idSubgrupo="<?php //echo $id; ?>">Borrar</button></a>-->
                                           <button type="button" name="view" value="Ver" id="<?php echo $subgrupo["id"]; ?>" class="btn btn-info btn-xs view_data2"><i class="fa fa-eye" aria-hidden="true"></i></button>
                                           <?php if ($subgrupo['activo']==1 and $subgrupo['enviado']==0): ?>
-                                          <a href="bat"> <button type="button" name="button" class="btn btn-success" onclick="return confirm('¿Confirma envio de mails?');">Enviar</button> </a>
+                                          <a href="bat"> <button type="button" name="button" class="btn btn-danger" onclick="return confirm('¿Confirma envio de mails?');">Enviar</button> </a>
                                           <?php endif; ?>
                                           <?php if ($subgrupo['enviado']==1): ?>
                                           <button type="button" name="button" class="btn btn-success">Enviado</i></button>
