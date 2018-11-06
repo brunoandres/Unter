@@ -95,7 +95,8 @@
                                           <a href="bat"> <button type="button" name="button" class="btn btn-success" onclick="return confirm('¿Confirma envio de mails?');">Enviar</button> </a>
                                           <?php endif; ?>
                                           <?php if ($subgrupo['enviado']==1): ?>
-                                          <a href="#"> <button type="button" class="btn btn-danger" name="desbloquear">Desbloquear</button> </a>
+                                          <button type="button" name="button" class="btn btn-success">Enviado</i></button>
+                                          <a href="#"> <button type="button" class="btn btn-danger" name="desbloquear">Activar envío</button> </a>
                                           <?php endif; ?>
 
                                         </td>
