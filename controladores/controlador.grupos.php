@@ -15,6 +15,7 @@ class ControladorGrupos
 
           //ARCHIVOS MULTIPLES
           $total = count($_FILES['adjuntos']['name']);
+          $nombre_grupo = $_POST['nombreGrupo'];
 
           // Loop through each file
           for( $i=0 ; $i < $total ; $i++ ) {
@@ -27,7 +28,7 @@ class ControladorGrupos
 
               $adjunto = 1;
               //Setup our new file path
-              $newFilePath = "./archivos/" . $_FILES['adjuntos']['name'][$i];
+              $newFilePath = "./adjuntos/".$nombre_grupo ."/". $_FILES['adjuntos']['name'][$i];
 
               //Upload the file into the temp dir
               if(move_uploaded_file($tmpFilePath, $newFilePath)) {
@@ -167,6 +168,7 @@ class ControladorGrupos
 
             //ARCHIVOS MULTIPLES
             $total = count($_FILES['adjuntos']['name']);
+            $nombre_grupo = $_POST['nombreGrupo'];
 
             // Loop through each file
             for( $i=0 ; $i < $total ; $i++ ) {
@@ -179,7 +181,8 @@ class ControladorGrupos
 
                 $adjunto = 1;
                 //Setup our new file path
-                $newFilePath = "./archivos/" . $_FILES['adjuntos']['name'][$i];
+
+                $newFilePath = "./adjuntos/".$nombre_grupo ."/". $_FILES['adjuntos']['name'][$i];
 
                 //Upload the file into the temp dir
                 if(move_uploaded_file($tmpFilePath, $newFilePath)) {
