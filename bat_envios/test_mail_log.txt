@@ -1,0 +1,25 @@
+2018/11/09 13:54:41 - Kitchen - Start of run.
+2018/11/09 13:54:46 - test_mail - Start of job execution
+2018/11/09 13:54:46 - test_mail - Starting entry [test_cuenta_mail]
+2018/11/09 13:54:46 - test_cuenta_mail - Loading transformation from XML file [D:\00-Proyectos\UNTER_FULL\test_cuenta_mail.ktr]
+2018/11/09 13:54:47 - test_cuenta_mail - Using run configuration [Pentaho local]
+2018/11/09 13:54:47 - test_cuenta_mail - Using legacy execution engine
+2018/11/09 13:54:47 - test_cuentas_mail - Iniciado despacho de la transformaci?n [test_cuentas_mail]
+2018/11/09 13:54:47 - salida.0 - Connected to database [unter_mysl] (commit=1000)
+2018/11/09 13:54:48 - oltp_cuentas_envio_correo 2.0 - Finished reading query, closing connection.
+2018/11/09 13:54:48 - oltp_cuentas_envio_correo 2 2.0 - Finished reading query, closing connection.
+2018/11/09 13:54:48 - oltp_cuentas_envio_correo 2.0 - Procesamiento finalizado (I=1, O=0, R=0, W=1, U=0, E=0)
+2018/11/09 13:54:48 - Cuenta UNTER RESPUESTA GRAL  2 2.0 - Procesamiento finalizado (I=0, O=0, R=1, W=1, U=0, E=0)
+2018/11/09 13:54:48 - Selecciona/Renombra 2 2.0 - Procesamiento finalizado (I=0, O=0, R=1, W=3, U=0, E=0)
+2018/11/09 13:54:48 - L 10 2.0 - Procesamiento finalizado (I=0, O=0, R=1, W=1, U=0, E=0)
+2018/11/09 13:54:48 - salida.0 - Procesamiento finalizado (I=0, O=1, R=1, W=1, U=0, E=0)
+2018/11/09 13:54:55 - EL2.0 - Procesamiento finalizado (I=0, O=0, R=1, W=1, U=0, E=0)
+2018/11/09 13:54:55 - test_mail - Starting entry [Ejecucion Correcta]
+2018/11/09 13:54:55 - test_mail - Starting entry [Success]
+2018/11/09 13:54:55 - test_mail - Finished job entry [Success] (result=[true])
+2018/11/09 13:54:55 - test_mail - Finished job entry [Ejecucion Correcta] (result=[true])
+2018/11/09 13:54:55 - test_mail - Finished job entry [test_cuenta_mail] (result=[true])
+2018/11/09 13:54:55 - test_mail - Job execution finished
+2018/11/09 13:54:55 - Kitchen - Finished!
+2018/11/09 13:54:55 - Kitchen - Start=2018/11/09 13:54:41.013, Stop=2018/11/09 13:54:55.765
+2018/11/09 13:54:55 - Kitchen - Processing ended after 14 seconds.

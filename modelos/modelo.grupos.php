@@ -22,9 +22,20 @@ class ModeloGrupos
   //FUNCION PARA TRAER GRUPOS
   static public function mdlObtenerGrupos(){
 
-    $link = Conexion::ConectarMysql();
-    $sql = mysqli_query($link,"SELECT COUNT(*) as cant_mails,a.id,a.nombre,a.descripcion,a.activo,a.adjunto,a.enviado,a.path_bat FROM grupos a, mails_subgrupos b,mails c WHERE c.id=b.id_mail GROUP by a.nombre");
 
+	
+	$link = Conexion::ConectarMysql();
+	$query = 'SELECT count(distinct a.direccion) as cant_mails,';
+	$query = $query.' d.id,d.nombre,d.descripcion,d.activo,d.adjunto,d.enviado,d.path_bat';
+	$query = $query.' FROM mails a ';
+	$query = $query.' INNER JOIN mails_subgrupos b ON (a.id = b.id_mail)';
+	$query = $query.' INNER JOIN subgrupos c ON (c.id = b.id_subgrupo)';
+	$query = $query.' INNER JOIN grupos d ON (c.fk_id_grupo = d.id)';
+	$query = $query.' GROUP BY d.nombre ORDER BY cant_mails desc';
+	
+    //$sql = mysqli_query($link,"SELECT COUNT(*) as cant_mails,a.id,a.nombre,a.descripcion,a.activo,a.adjunto,a.enviado,a.path_bat FROM grupos a, mails_subgrupos b,mails c WHERE c.id=b.id_mail GROUP by a.nombre");
+
+	$sql = mysqli_query($link,$query);
     while ($filas = mysqli_fetch_assoc($sql)) {
       $grupos[]=$filas;
     }
