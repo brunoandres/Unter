@@ -132,6 +132,7 @@ $set = $datosSubGrupo->ctrMostrarDatosSubGrupos($_GET['id']);
                                         <div class="form-group form-default">
                                             <span class="form-bar"></span>
                                             <button type="submit" name="btnFormEditarSubGrupo" class="btn btn-warning waves-effect waves-light">Guardar cambios</button>
+                                            <a href="subgrupos"><button type="button" name="" class="btn btn-danger waves-effect waves-light">Cancelar</button></a>
                                         </div>
                                     </form>
                                 </div>

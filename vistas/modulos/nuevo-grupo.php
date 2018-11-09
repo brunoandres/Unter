@@ -89,7 +89,9 @@
                                         <div class="form-group form-default">
                                             <span class="form-bar"></span>
                                             <button type="submit" name="btnFormNuevoGrupo" class="btn btn-success waves-effect waves-light">Guardar</button>
+                                            <a href="inicio"><button type="button" name="" class="btn btn-danger waves-effect waves-light">Cancelar</button></a> 
                                         </div>
+
                                     </form>
                                 </div>
                             </div>

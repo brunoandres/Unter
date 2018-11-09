@@ -22,10 +22,11 @@ if(isset($_POST["employee_id"]))
             '
                 <tr>
                      <td><h6>Nombre Grupo: </h6>'.$row['nombre'].'</td><br>
+                     <td><h6>Asunto Grupo: </h6>'.$row['asunto'].'</td><br>
                      <td><h5>Cuerpo de mail : </h5> </td><br>
 
                      <textarea id="summernote" name="cuerpoGrupo" readonly="readonly">'.$row['cuerpo'].'</textarea>
-                     
+
                 </tr>
            ';
       }

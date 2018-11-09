@@ -21,6 +21,7 @@ if(isset($_POST["employee_id"]))
             '
                 <tr>
                      <td><h6>Nombre Subgrupo: </h6>'.$row['nombre'].'</td><br>
+                     <td><h6>Asunto Subgrupo: </h6>'.$row['asunto'].'</td><br>
                      <td><h5>Cuerpo de mail : </h5> </td><br>
                      <textarea id="summernote" name="cuerpoGrupo" readonly="readonly">'.$row['cuerpo'].'</textarea>
 

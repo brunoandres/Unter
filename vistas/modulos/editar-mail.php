@@ -79,6 +79,7 @@ $set = $datosMail->ctrMostrarDatosMail($_GET['id']);
                                         <div class="form-group form-default">
                                             <span class="form-bar"></span>
                                             <button type="submit" name="btnFormEditarMail" class="btn btn-success waves-effect waves-light">Guardar</button>
+                                            <a href="mails"><button type="button" name="" class="btn btn-danger waves-effect waves-light">Cancelar</button></a>
                                         </div>
 
 
